@@ -1,0 +1,257 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f3f6f2;
+  --foreground: #182521;
+  --muted: #5c6c65;
+  --line: #d9e2dc;
+  --surface: #ffffff;
+  --accent: #176b57;
+  --accent-strong: #105541;
+  --signal: #b65337;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.auth-page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.88fr);
+  min-height: 100svh;
+  background: var(--surface);
+}
+
+.auth-page-compact {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  padding: 28px 20px;
+  background: var(--background);
+}
+
+.auth-panel {
+  align-self: center;
+  justify-self: center;
+  width: min(100%, 480px);
+  padding: 48px clamp(24px, 6vw, 56px);
+}
+
+.auth-page-compact .auth-panel {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  padding: 40px clamp(24px, 6vw, 48px);
+}
+
+.auth-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.auth-mark {
+  display: grid;
+  width: 30px;
+  aspect-ratio: 1;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  padding: 5px;
+  background: var(--accent);
+}
+
+.auth-mark i {
+  display: block;
+  background: white;
+}
+
+.auth-mark i:nth-child(2),
+.auth-mark i:nth-child(3) {
+  opacity: 0.55;
+}
+
+.auth-eyebrow {
+  margin: 52px 0 10px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.auth-panel h1 {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 650;
+  line-height: 1.15;
+}
+
+.auth-copy {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.auth-form {
+  display: grid;
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.auth-form label {
+  display: grid;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.auth-form input {
+  width: 100%;
+  min-height: 46px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: white;
+  padding: 0 12px;
+  color: var(--foreground);
+  font: inherit;
+  font-weight: 400;
+}
+
+.auth-form input:focus {
+  border-color: var(--accent);
+  outline: 2px solid color-mix(in srgb, var(--accent) 18%, transparent);
+  outline-offset: 1px;
+}
+
+.auth-form button {
+  min-height: 46px;
+  border: 0;
+  border-radius: 3px;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.auth-form button:hover {
+  background: var(--accent-strong);
+}
+
+.auth-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
+
+.auth-footnote {
+  margin-top: 38px;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.auth-message {
+  margin: 20px 0 0;
+  border-left: 2px solid var(--accent);
+  background: #eef5f0;
+  padding: 10px 12px;
+  color: var(--accent-strong);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.auth-message-error {
+  border-color: var(--signal);
+  background: #fbf0ec;
+  color: var(--signal);
+}
+
+.auth-side {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  background: #1d493d;
+  color: #f3f6f2;
+}
+
+.auth-grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(#ffffff0c 1px, transparent 1px), linear-gradient(90deg, #ffffff0c 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(135deg, black, transparent 82%);
+}
+
+.auth-side-label {
+  position: absolute;
+  right: 12%;
+  bottom: 14%;
+  font-size: clamp(36px, 6vw, 72px);
+  font-weight: 650;
+  line-height: 0.95;
+}
+
+.auth-side-line {
+  position: absolute;
+  top: 22%;
+  left: 22%;
+  width: 1px;
+  height: 48%;
+  background: #d6e4dc66;
+  transform: rotate(34deg);
+}
+
+.auth-side-dot {
+  position: absolute;
+  top: 27%;
+  left: 46%;
+  width: 14px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #e1a26f;
+  box-shadow: 0 0 0 10px #e1a26f22;
+}
+
+@media (max-width: 760px) {
+  .auth-page {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-side {
+    display: none;
+  }
+
+  .auth-panel {
+    padding: 36px 24px;
+  }
+
+  .auth-eyebrow {
+    margin-top: 42px;
+  }
+}
