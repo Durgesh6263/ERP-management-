@@ -1,0 +1,12 @@
+title = "Gitleaks ERP Config"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Global allowlist for safe templates"
+paths = [
+  '''^\.env\.example$''',
+  '''^app/\.env\.example$''',
+  '''^\.venv/.*'''
+]

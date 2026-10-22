@@ -40,3 +40,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local developer scripts, scratchpad, and database dumps
+/scratch/
+/scripts/
+orders_backup_*.json
+*.dump
+*.sql.bak
+*.key
+*.cert
+
